@@ -17,7 +17,7 @@ export function Sidebar() {
           <Link href="/users" className="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-md text-sm font-medium">
             <Users size={18} /> User
           </Link>
-          <Link href="#" className="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-md text-sm font-medium">
+          <Link href="/revenue" className="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-md text-sm font-medium">
             <LineChart size={18} /> Revenue Analytics
           </Link>
           <Link href="#" className="flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-md text-sm font-medium">
