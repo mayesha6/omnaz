@@ -1,9 +1,15 @@
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { EditUserModal } from "@/components/users/edit-user-modal";
 
 export default function UserDetailsPage() {
+  const [isEditModalOpen, setEditModalOpen] = useState(false);
+
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-8">
@@ -28,7 +34,10 @@ export default function UserDetailsPage() {
               </div>
             </div>
           </div>
-          <Button variant="outline">Edit Profile</Button>
+          {/* Added onClick event here */}
+          <Button variant="outline" onClick={() => setEditModalOpen(true)}>
+            Edit Profile
+          </Button>
         </CardContent>
       </Card>
 
@@ -103,6 +112,9 @@ export default function UserDetailsPage() {
           <Button variant="destructive" className="bg-red-500 hover:bg-red-600">Cancel Plan</Button>
         </CardContent>
       </Card>
+
+      {/* Added Modal Component here */}
+      <EditUserModal isOpen={isEditModalOpen} onClose={() => setEditModalOpen(false)} />
     </div>
   );
 }
